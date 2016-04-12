@@ -89,3 +89,10 @@ gulp.task('default', function (finishTask) {
     }
 
 });
+
+gulp.task('joshHack', function () {
+    // the intent is to copy a file called 'vendri.html' from demo to dev
+    // once fuller understanding is attained, the correct way may be implemented!
+        gulp.src('./demo/*.html')
+            .pipe(gulp.dest('./dev'));
+});
