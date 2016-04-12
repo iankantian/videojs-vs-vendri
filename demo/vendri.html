@@ -31,7 +31,6 @@
 <h3 class="title main">vendri</h3>
 <div class="container">
     <div class="row">
-        <!--<h4>VideoJs <%=version%> Demo</h4>-->
         <div class="twelve columns">
             <div class="vast-container">
                 <form id="vast-vpaid-form">
@@ -100,6 +99,72 @@
         </span></p>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function( event ) {
+        var vast_tag_radio = document.getElementById( 'vast-tag-radio' );
+        var vast_sample_radio = document.getElementById( 'vast-sample-radio' );
+        var vast_custom_radio = document.getElementById( 'vast-custom-radio' );
+
+        function updateRadioState(){
+            vast_tag_radio = document.getElementById( 'vast-tag-radio' );
+            vast_sample_radio = document.getElementById( 'vast-sample-radio' );
+            vast_custom_radio = document.getElementById( 'vast-custom-radio' );
+            return [ vast_tag_radio, vast_sample_radio, vast_custom_radio ];
+        }
+        updateRadioState();
+
+        vast_tag_radio.addEventListener('click', function( event ) {
+//            console.log( updateRadioState() );
+            updateMenus( updateRadioState() );
+        });
+        vast_sample_radio.addEventListener('click', function( event ) {
+//            console.log( updateRadioState() );
+            updateMenus( updateRadioState() );
+        });
+        vast_custom_radio.addEventListener('click', function( event ) {
+//            console.log( updateRadioState() );
+            updateMenus( updateRadioState() );
+        });
+
+        updateMenus( updateRadioState() );
+    });
+
+    function updateMenus( radioState ){
+        var vast_tag_menu = document.getElementsByClassName( 'row tag-type' ); // this is the menu for vast tags
+        var vast_sample_menu = document.getElementsByClassName( 'row xml-type' ); // this is the menu for vast tags
+        var vast_custom_menu = document.getElementsByClassName( 'row custom-type' ); // this is the menu for vast tags
+
+//        console.log( radioState );
+        console.log( vast_tag_menu );
+        console.log( vast_sample_menu );
+        console.log( vast_custom_menu );
+
+        if( radioState[ 0 ].checked == true ){
+            vast_tag_menu[ 0 ].hidden = false;
+//            console.log( 'vast_tag_menu is', vast_tag_menu );
+        }
+        else{
+            vast_tag_menu[ 0 ].hidden = true;
+//            console.log( 'vast_tag_menu is', vast_tag_menu );
+        }
+        if( radioState[ 1 ].checked == true ){
+            vast_sample_menu[ 0 ].hidden = false;
+//            console.log( 'vast_sample_menu is', vast_sample_menu );
+        }
+        else{
+            vast_sample_menu[ 0 ].hidden = true;
+//            console.log( 'vast_sample_menu is', vast_sample_menu );
+        }
+        if( radioState[ 2 ].checked == true ){
+            vast_custom_menu[ 0 ].hidden = false;
+//            console.log( 'vast_custom_menu is', vast_custom_menu );
+        }
+        else {
+            vast_custom_menu[0].hidden = true;
+//            console.log( 'vast_custom_menu is', vast_custom_menu );
+        }
+    }
+</script>
 </body>
 
 </html>
