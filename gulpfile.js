@@ -91,8 +91,12 @@ gulp.task('default', function (finishTask) {
 });
 
 gulp.task('joshHack', function () {
-    // the intent is to copy a file called 'vendri.html' from demo to dev
+    // the intent is to copy stuff from demo to dev
     // once fuller understanding is attained, the correct way may be implemented!
-        gulp.src('./demo/*.html')
-            .pipe(gulp.dest('./dev'));
+    gulp.src('./demo/*.html') // copy over html pages
+        .pipe(gulp.dest('./dev'));
+    gulp.src('./demo/xml') // copy over xml directory
+        .pipe(gulp.dest('./dev'));
+    gulp.src('./demo/xml/*.*') // copy all files to xml directory
+        .pipe(gulp.dest('./dev/xml'));
 });
