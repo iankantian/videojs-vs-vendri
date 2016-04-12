@@ -1,12 +1,12 @@
 {
   "dti": 10,
   "pti": 10,
-  "debug": true,
+  "debug": false,
   "adSkip": {
     "enabled": true,
     "duration": 2,
-    "textBefore": "Hold on just {duration} seconds!",
-    "textAfter": "Ok, back to you",
+    "textBefore": "You can skip this ad in {duration}",
+    "textAfter": "Skip now",
     "sync": true
   },
   "platforms": [
@@ -160,4 +160,3 @@
     }
   ]
 }
-
