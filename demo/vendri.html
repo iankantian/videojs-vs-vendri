@@ -101,16 +101,29 @@
     </div>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        hideShow();
-    });
-    function hideShow(){
+    document.addEventListener('DOMContentLoaded', function( event ) {
         var vast_tag_radio = document.getElementById( 'vast-tag-radio' );
-        console.log( 'vast-tag-radio is ', vast_tag_radio );
+        vast_tag_radio.addEventListener('click', function( event ) {
+            updateMenus();
+        });
+
         var vast_sample_radio = document.getElementById( 'vast-sample-radio' );
-        console.log( 'vast-tag-radio is ', vast_sample_radio );
+        vast_sample_radio.addEventListener('click', function( event ) {
+            updateMenus();
+        });
+
         var vast_custom_radio = document.getElementById( 'vast-custom-radio' );
-        console.log( 'vast-tag-radio is ', vast_custom_radio );
+        vast_custom_radio.addEventListener('click', function( event ) {
+            updateMenus();
+        });
+        updateMenus();
+    });
+
+    function updateMenus(){
+        var vast_tag_menu = document.getElementsByClassName( 'row tag-type' ); // this is the menu for vast tags
+        var vast_sample_menu = document.getElementsByClassName( 'row xml-type' ); // this is the menu for vast tags
+        var vast_custom_menu = document.getElementsByClassName( 'row custom-type' ); // this is the menu for vast tags
+        console.log( 'menus updated' );
     }
 </script>
 </body>
